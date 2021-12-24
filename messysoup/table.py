@@ -119,7 +119,6 @@ def create_table(table: Union[list, dict], has_headers: bool=True, has_footers:b
     data_ = []
     headers_ = []
     footers_ = []
-    has_pandas = False
     pandas_df = False
 
     ## Checks to ensure that if headers are included in the dataset, additional

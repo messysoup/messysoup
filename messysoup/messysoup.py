@@ -1,5 +1,6 @@
 import messysoup.table as tb
 from .attributes import *
+from copy import deepcopy
 
 class MessyStyles():
     """
@@ -55,8 +56,12 @@ class MessySoup():
     def add(self, element):
         self.html_file += element
 
-    def write_file(self):
-        f = open(f"{self.file_name}.html", "w")
+    def write_file(self, dir_: str=""):
+        """
+        Provide a directory to write the file to. An empty directory will
+        deftault to the working directory
+        """
+        f = open(f"{dir_}{self.file_name}.html", "w")
         n = f.write(self.html_file)
         f.close()
 
@@ -92,10 +97,10 @@ def add_all_table_attributes(table: str, accesskey:str ="", class_: str ="", con
         '<tfoot'
     ]
 
-    result = ""
+    result = deepcopy(table)
 
     for i in atts:
-        result = table.replace(i, i + g_args)
+        result = result.replace(i, i + g_args)
 
 
     return result
