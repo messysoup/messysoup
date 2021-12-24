@@ -1,5 +1,6 @@
 import pandas as pd
 from .table_helpers import table, tbody, thead, tfoot, th, tr, td
+from .attributes import *
 from typing import Union
 from copy import deepcopy
 
@@ -155,30 +156,4 @@ def create_table(table: Union[list, dict], has_headers: bool=True, has_footers:b
 
     # result = create_html_table(data_, headers_, footers_)
 
-    print(data_)
     return data_, headers_, footers_
-
-
-def _add_attributes():
-    pass
-
-def add_all_table_attributes():
-    pass
-
-def add_trow_attrinutes():
-    pass
-
-def add_tcell_attributes():
-    pass
-
-def add_theader_attributes():
-    pass
-
-def add_th_attributes():
-    pass
-
-def add_tbody_attributes():
-    pass
-
-def add_tfooter_attributes():
-    pass
