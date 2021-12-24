@@ -84,3 +84,23 @@ This will create a basic html table where all tags will be lacking attributes.  
 - `add_th_attributes()`
 - `add_tbody_attributes()`
 - `add_tfooter_attributes()`
+
+## Global arguments
+
+The majority of attributes allow global arguments.  The below is a quick reference for each arguement.  For tag specific items, see the MDN docs.
+
+- `accesskey`: A shortcut key to activate of focus on the element.
+- `class`: Specify the classname for an element.
+- `contenteditable`: Determines whether the content of the element is editable.
+- `data_key`: Will be appended to the `data-` tag. Used to store custom data private to the page or application.
+- `data_value`: The value of the `data-` tag.
+- `dir_`: Specifies the direction of the text.
+- `draggable`: Specifies whether or not an element is draggable.
+- `hidden`: Specifies whether or not an element is relevant.
+- `id`: Unique id for the element.
+- `lang`: Language of the element.
+- `spellcheck`: Specifies whether or not spelling and grammer should be checked.
+- `style`: Add inline CSS.
+- `tabindex`: Tabbing order of the element.
+- `title`: Extra info about the element.
+- `translate`: Whether or not the element should be translated.
