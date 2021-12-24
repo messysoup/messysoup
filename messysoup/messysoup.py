@@ -225,8 +225,6 @@ def a(text, href: str="", download: str="", hreflang: str="", media: str="", pin
     """
     Returns a hyperlink.\n
     `href`: Enter the link as a string\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -254,8 +252,6 @@ def abbreviation(text, accesskey:str ="", class_: str ="", contenteditable: str 
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Returns an abbreviation.
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -269,8 +265,6 @@ def address(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Returns an address.
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -287,8 +281,6 @@ def area(alt: str="", coords: str="", download: str="", href: str="",
             style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Returns an area.  Must be used inside a map.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -319,8 +311,6 @@ def article(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Returns an article.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -335,10 +325,7 @@ def aside(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns an `aside`.\n
     `text`: the contents of the aside.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstrin
-    g for complete list.\n
-    """
+"""
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
                         tabindex, title, translate)
@@ -354,8 +341,6 @@ def audio(contents, autoplay: str="", controls: str="", loop: str="", muted: str
     """
     Returns an audio elemnt.\n
     `contents`: The contents of the `audio` tag.
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
 
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
@@ -384,8 +369,6 @@ def b(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
     Returns a bold tag.\n
     `text`: Required.  Text in the tag.
     `contents`: The contents to be enboldened.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -415,8 +398,6 @@ def bdi(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a `bdi`\n
     `text`: Required. Text to isolate.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -431,8 +412,6 @@ def bdo(text, dir_: str="",accesskey:str ="", class_: str ="", contenteditable: 
     """
     Returns a `dir` element.\n
     `text`: Required.  Text to alter.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -454,9 +433,7 @@ def blockquote(text, cite="", accesskey:str ="", class_: str ="", contenteditabl
     Returns a `blockquote`.\n
     `text`: Required. Text to quote.\n
     `cite`: Location cited.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n        
-    """
+"""
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                         dir_, draggable, hidden, id_, lang, spellcheck, style, 
                         tabindex, title, translate)
@@ -470,8 +447,6 @@ def body(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns the body element.\n
     `text`: Required.  Contents of the tag.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -492,8 +467,6 @@ def button(text, autofocus: str="", disabled: str="", form: str="", formation: s
     """
     Returns a button.\n
     `text`: Required.  Contents of the tag.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """    
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -525,8 +498,7 @@ def canvas(text, width: str="", height: str="",                                 
     """
     Returns a `canvas`.
     `text`: Required.  Contents of the tag.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
+
     `args`: Specific args for `canvas`, limited to:\n
         - `height`
         - `width`
@@ -551,8 +523,6 @@ def caption(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a `caption`.\n
     `text`: Required.  Contents of the tag.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -567,8 +537,6 @@ def cite(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a citation.\n
     `text`: Required.  Contents of the tag.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -583,8 +551,6 @@ def code(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a code fragment.\n
     `text`: Required.  Contents of the tag.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -598,8 +564,6 @@ def col(span: str="", accesskey:str ="", class_: str ="", contenteditable: str =
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Specifies column properties.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -619,8 +583,6 @@ def colgroup(contents, span: str="", accesskey:str ="", class_: str ="", content
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Groups columns for formatting.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -641,8 +603,6 @@ def data(text, value: str="", accesskey:str ="", class_: str ="", contenteditabl
     """
     Used to add machine readable translation of the content.\n
     `text`: Required.  The content to be translated.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -663,8 +623,6 @@ def datalist(contents, accesskey:str ="", class_: str ="", contenteditable: str 
     """
     Returns a `datalist` element.\n
     `contents`: Required.  The content of the tag.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -679,8 +637,6 @@ def dd(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Used to describe an item in a desciption list.\n
     `text`: Required.  The content of the tag.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -695,8 +651,6 @@ def de(text, cite: str="", datetime: str="", accesskey:str ="", class_: str ="",
     """
     Used in combination with an `ins` tag.  Will cause text to have a strikethrough.\n
     `text`: Required.  The content of the tag.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -718,8 +672,6 @@ def details(content, open_: str="", accesskey:str ="", class_: str ="", contente
     """
     Used to show or hide additional details.\n
     `contents`: Required.  The content to be translated.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -740,8 +692,6 @@ def dfn(text, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a definition element.\n
     `text`: The text to be defined.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -756,8 +706,6 @@ def dialog(text, open_: str="", accesskey:str ="", class_: str ="", contentedita
     """
     Returns a dialog box.\n
     `text`: The content of the dialog box.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -778,8 +726,6 @@ def div(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a `div`.\n
     `content`: The contents of the `div`,\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -794,8 +740,6 @@ def dl(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines a description list.\n
     `content`: the content to be defined.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -810,8 +754,6 @@ def dt(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines an item in a description list.\n
     `content`: Content being defined.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -826,8 +768,6 @@ def em(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns emphasized text.\n
     `content`: The content to be emphasized.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -842,8 +782,6 @@ def fieldset(content, disabled: str="", form: str="", name: str="", accesskey:st
     """
     Returns a fieldset.  Used to group like items in a form.\n
     `content`: The items to be grouped together.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -866,8 +804,6 @@ def figcaption(content, accesskey:str ="", class_: str ="", contenteditable: str
     """
     Defines a caption for a `figure` element.\n
     `content`: The caption.
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -882,8 +818,6 @@ def figure(content, accesskey:str ="", class_: str ="", contenteditable: str =""
     """
     Returns a self contained conent.\n
     `content`: The content.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -898,8 +832,6 @@ def footer(content, accesskey:str ="", class_: str ="", contenteditable: str =""
     """
     Returns a footer.\n
     `content`: The contents of the footer.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -917,8 +849,6 @@ def form(content, accept_charset: str="", action: str="", autocomplete: str="",
     """
     Defines a form.\n
     `content`: The content of the form.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -947,8 +877,6 @@ def h1(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a heading.\n
     `content`: The text of the heading.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -964,8 +892,6 @@ def h2(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a heading.\n
     `content`: The text of the heading.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -980,8 +906,6 @@ def h3(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a heading.\n
     `content`: The text of the heading.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -996,8 +920,6 @@ def h4(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a heading.\n
     `content`: The text of the heading.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1012,8 +934,6 @@ def h5(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a heading.\n
     `content`: The text of the heading.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1028,8 +948,6 @@ def h6(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a heading.\n
     `content`: The text of the heading.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1044,8 +962,6 @@ def head(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a head.\n
     `content`: The contents of the `head`.
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1060,8 +976,6 @@ def header(content, accesskey:str ="", class_: str ="", contenteditable: str =""
     """
     Returns a header.\n
     `content`: The contents of the header.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1075,8 +989,6 @@ def hr(accesskey:str ="", class_: str ="", contenteditable: str ="",
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Used to break up content, returns a horizontal line.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1091,8 +1003,6 @@ def html(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines the root of the page, is a container for everything except `doctype`.\n
     `content`: Content of the page.
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1107,8 +1017,6 @@ def i(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Marks text as italic.\n
     `content`: Content to be italicized.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1126,8 +1034,6 @@ def ifrmae(content, allow: str="", allowfullscreen: str="", allowpaymentrequest:
     """
     Embeds another document in the main document.\n
     `content`: The other document.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1158,8 +1064,6 @@ def img(alt: str="", crossorigin: str="", height: str="", ismap: str="", loading
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Displays an image.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1198,8 +1102,6 @@ def input_(accept: str="", alt: str="", autocomplete: str="", autofocus: str="",
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Allows the user to enter input.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
 
     args = {
@@ -1250,8 +1152,6 @@ def ins(content, cite: str="", datetime: str="", accesskey:str ="", class_: str 
     """
     Paired with `del`, returns inserted text.\n
     `content` - Content to be inserted.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1273,8 +1173,6 @@ def kdb(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a visual for keyboard input.\n
     `content`: Returns the keys in question.
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1289,8 +1187,6 @@ def label(content, for_: str="", form: str="", accesskey:str ="", class_: str ="
     """
     Defines a label.\n
     `content`: Contents of the label.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1312,8 +1208,6 @@ def legend(content, accesskey:str ="", class_: str ="", contenteditable: str =""
     """
     Defines a legend.\n
     `content`: Contents of the legend.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1328,9 +1222,6 @@ def li(content, value: str="", accesskey:str ="", class_: str ="", contenteditab
     """
     Defines a list value.\n
     `content`: Contents of the list value.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
-
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1353,8 +1244,6 @@ def link(crossorigin: str="", href: str="", hreflang: str="", media: str="",
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Defines a link between the current document and an external resource.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1383,8 +1272,6 @@ def main(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines the main part of the document.\n
     `content`: Contents of the documents.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1399,8 +1286,6 @@ def map_(content, name: str="", accesskey:str ="", class_: str ="", contentedita
     """
     Defines an image map.\n
     `content`: Contents of the map.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1421,8 +1306,6 @@ def mark(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines text that should be marked/highlighted.\n
     `content`: Content to be highlighted.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1437,8 +1320,6 @@ def meta(charset: str="", content: str="", http_equiv: str="", name: str="",    
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Defines metadata about the document.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1465,8 +1346,6 @@ accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines a guage.\n
     `content`: Contents of the meter.
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1493,8 +1372,6 @@ def nav(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines a navigation section.\n
     `content`: Content of the navigation.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1510,8 +1387,6 @@ def noscript(content, accesskey:str ="", class_: str ="", contenteditable: str =
     Defines alternative content to be displayed when scripts
     aren't supported or disabled.\n
     `content`: Content to be displayed.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1526,8 +1401,6 @@ def ol(content, reversed_: str="", start: str="", type_: str="", accesskey:str =
     """
     Returns an ordered list item.\n
     `content`: Contents of the list item.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1550,8 +1423,6 @@ def optgroup(content, disabled: str="", label: str="", accesskey:str ="", class_
     """
     Returns an option group in a `select` tag.\n
     `content`: The group of optoins.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1574,8 +1445,6 @@ def option(content, disabled: str="", label: str="", selected: str="", value: st
     """
     Returns an option in a `select` tag.\n
     `content`: The option in question.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """ 
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1600,8 +1469,6 @@ def output(content, for_: str="", form: str="", name: str="", accesskey:str ="",
     """
     Returns the output of a calculation.\n
     `content`: The output.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1624,8 +1491,6 @@ def p(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a paragraph.\n
     `content`: Contents of the paragraph.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1639,8 +1504,6 @@ def param(name: str="", value: str="", accesskey:str ="", class_: str ="", conte
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Defines the parameters of an object.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1664,8 +1527,6 @@ def picture(content, accesskey:str ="", class_: str ="", contenteditable: str ="
     multiple picture sizes are available.  Will use the first
     one that matches the viewport.\n
     `content`: The various pictures.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1680,8 +1541,6 @@ def pre(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines preformatted text.\n
     `content`: The preformatted text.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1697,8 +1556,6 @@ def progress(content, max_: str="", value: str="",  accesskey:str ="", class_: s
     """
     Defines a progress bar.\n
     `content`: Contents of the progressbar.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1720,8 +1577,6 @@ def q(content, cite: str="", accesskey:str ="", class_: str ="", contenteditable
     """
     Defines a short quote.\n
     `content`: Quote.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1742,8 +1597,6 @@ def rp(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Provides parenthesis around ruby text.\n
     `contents`: The parenthesis.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1758,8 +1611,6 @@ def rt(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Provides an explanation or pronounciation around ruby text.\n
     `contents`: The explanation or pronounciation.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1774,8 +1625,6 @@ def ruby(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Specifies a ruby annotation.\n
     `content`: The annotation.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1790,8 +1639,6 @@ def s(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Specifies text that is no longer correct, accurate, or relevant.\n
     `content`: New content.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1806,8 +1653,6 @@ def samp(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines output from a computer program.\n
     `content`: Content to be displayed.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1824,8 +1669,6 @@ def script(content, async_: str="", crossorigin: str="", defer: str="", integrit
     """
     Defines a script to be called.\n
     `content`: The script.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """    
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1853,8 +1696,6 @@ def section(content, accesskey:str ="", class_: str ="", contenteditable: str ="
     """
     Defines a section in a document.\n
     `content`: Contents of the sections.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1872,8 +1713,6 @@ accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Used to create a drop-down list.\n
     `content`: The contents of the list.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1900,8 +1739,6 @@ def small(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Used to make small text.\n
     `content`: Content to make small.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1916,8 +1753,6 @@ def source(media: str="", sizes: str="", src: str="", srcset: str="", type_: str
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Specifies multiple media elements.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1942,8 +1777,6 @@ def span(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns and inline container.\n
     `content`: The content of the container.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1958,8 +1791,6 @@ def strong(content, accesskey:str ="", class_: str ="", contenteditable: str =""
     """
     Makes text bold.\n
     `content`: Content to make bold.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1974,8 +1805,6 @@ def style(content, media: str="", type_: str="", accesskey:str ="", class_: str 
     """
     Define CSS style for a document.\n
     `content`: CSS styles.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -1997,8 +1826,6 @@ def sub(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines subscript text.\n
     `content`: Content to be subscripted.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2013,9 +1840,7 @@ def summary(content, accesskey:str ="", class_: str ="", contenteditable: str ="
     """
     Returns a summary.\n
     `contents`: Contents of a summary.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n        
-    """
+"""
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
                     tabindex, title, translate)
@@ -2029,8 +1854,6 @@ def sup(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns superscript.\n
     `content`: Contents of the superscript.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2054,8 +1877,6 @@ def table(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a table.\n
     `content`: Contents of the table.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2070,8 +1891,6 @@ def tbody(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a table body.\n
     `content`: Contents of the table body.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2087,8 +1906,6 @@ def td(content, colspan: str="", header: str="", rowspan: str="",
     """
     Returns a data cell in a table.\n
     `content`: Content of the cell.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2111,8 +1928,6 @@ def template(content, accesskey:str ="", class_: str ="", contenteditable: str =
     """
     Used to hide a container from the user later made visible from a script.\n
     `content`: Content of the template.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2130,8 +1945,6 @@ def textarea(content, autofocus: str="", cols: str="", disabled: str="", form: s
     """
     Returns a textarea, a multiline input textbox.\n
     `content`: Contents of the `textarea`.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2162,8 +1975,6 @@ def tfoot(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a table footer.\n
     `content`: Contents of the table footer.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2179,8 +1990,6 @@ def th(content, abbr: str="", colspan: str="", headers: str="", rowspan: str="",
     """
     Returns a table header cell.\n
     `content`: Contents of the table header cell.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2205,8 +2014,6 @@ def thead(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a table header.\n
     `content`: Contents of the table head.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2221,8 +2028,6 @@ def time(content, datetime: str="", accesskey:str ="", class_: str ="", contente
     """
     Defines a specific time or datetime.\n
     `content`: The time or datetime.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2243,8 +2048,6 @@ def title(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines the title of the html document.\n
     `content`: Contents of the title.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2259,8 +2062,6 @@ def tr(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a table row.\n
     `content`: Contents of the table row.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2275,8 +2076,6 @@ def track(default: str="", kind: str="", label: str="", src: str="", srclang: st
                 style: str="", tabindex: str="", title: str="", translate: str=""):
     """
     Specify the track for the audio or video element.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2301,8 +2100,6 @@ def u(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Underlines text.\n
     `content`: Content to be underlined.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2317,8 +2114,6 @@ def ul(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Defines an unordered list.\n
     `content`: Contents of the unordered list.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2333,8 +2128,6 @@ def var(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Returns a variable.\n
     `content`: The variable in question.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2351,8 +2144,6 @@ def video(content, autoplay: str="", controls: str="", height: str="", loop: str
     """
     Returns a video.\n
     `content`: Sources and error text.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
@@ -2381,8 +2172,6 @@ def wbr(content, accesskey:str ="", class_: str ="", contenteditable: str ="",
     """
     Specifices a word break opportunity.
     `content`: Contents of the word break`.
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
     """
     g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
                     dir_, draggable, hidden, id_, lang, spellcheck, style, 
