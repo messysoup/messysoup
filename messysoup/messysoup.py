@@ -47,12 +47,6 @@ class MessySoup():
         self.html_file = ""
         self.file_name = file_name
 
-    def nest(self, *args):
-        result = ""
-        for i in args:
-            result += i
-        return result
-
     def add(self, element):
         self.html_file += element
 
