@@ -27,7 +27,7 @@ Each python tag has three main types of attibutes:
 
 The below example uses two common tags, a paragraph and a hyperlink.  One makes use the global tags, and one makes use non-global tags.
 ```
-from messysoup import p
+from messysoup.messysoup import p
 
 content = ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
         "Aliquam sapien ligula, finibus sed ullamcorper vitae, dignissim ac turpis. " 
@@ -47,7 +47,7 @@ my_link = a("The text of the hyperlink", href="https://www.github.com")
 In order to create a document out of it, add it to the `MessySoup` class.
 
 ```
-from messysoup import MessySoup, p
+from messysoup.messysoup import MessySoup, p
 
 
 document = MessySoup("filename")
