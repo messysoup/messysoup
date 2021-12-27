@@ -1,158 +1,131 @@
-import pandas as pd
-from .table_helpers import table, tbody, thead, tfoot, th, tr, td
-from .attributes import *
-from typing import Union
+from ..attributes import *
 from copy import deepcopy
+import messysoup.table.table_helpers as tb
 
-def table_from_data_frame(table: pd.DataFrame):
-    data = table.iloc[:-2].values.lolist()
-    headers = table.columns.values.tolist()
-    footers = table.iloc[-1].values.tolist()
+def create_table(table: list, has_headers: bool=True, has_footers:bool =True, headers:list =[], footers:list =[], return_html: bool=True):
+    return tb.create_table(table, has_headers, has_footers, headers, footers, return_html)
 
-    return data, headers, footers
+def add_all_table_attributes(table: str, accesskey:str ="", class_: str ="", contenteditable: str ="", 
+                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
+                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
+                style: str="", tabindex: str="", title: str="", translate: str=""):
 
+    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
+                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
+                    tabindex, title, translate)
 
-def table_from_lists(table: list, headers: list, footers: list):
-    data_ = []
-    headers_ = []
-    footers_ = []
+    atts = [
+        '<table',
+        '<thead',
+        '<th',
+        '<tbody',
+        '<tr',
+        '<td',
+        '<tfoot'
+    ]
 
-    ## TODO: Look into checking length of headers and footers against length of data.
-    if len(headers) > 0:
-        headers_ = headers
+    result = deepcopy(table)
 
-    if len(footers) > 0:
-        footers_ = footers
-
-    if len(headers) == 0 and len(footers) == 0:
-        data_ = table[1:-1]
-        headers_ = table[0]
-        footers_ = table[-1]
-
-    return data_, headers_, footers_,
-
-
-def table_from_dict(table: list, footers: dict):
-    data_dict = {}
-    data_ = []
-    headers_ = []
-    footers_ = []
-
-    ## This will take the dictionary and put it into a nested list
-    ## Rows and columns are swapped for the moment
-
-    if type(table) == dict:
-        data_dict = deepcopy(table)
-
-        if len(footers) > 0:
-            for key, value in footers.items():
-                data_dict[key].append(value)
-
-    else:        
-        for i in table:
-            for key, value in i.items():
-                if key in data_dict.keys():
-                    data_dict[key].append(value)
-                else:
-                    data_dict[key] = [value]
-
-        if len(footers) > 0:
-            for key, value in footers.items():
-                data_dict[key].append(value)
+    for i in atts:
+        result = result.replace(i, i + g_args)
 
 
-    for key, value in data_dict.items():
-        headers_.append(key)
-        temp_list = []
-        for i in value:
-            temp_list.append(i)
-        data_.append(temp_list)
+    return result
+
+def add_table_attributes(table: str, accesskey:str ="", class_: str ="", contenteditable: str ="", 
+                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
+                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
+                style: str="", tabindex: str="", title: str="", translate: str=""):
+
+    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
+                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
+                    tabindex, title, translate)
+
+    return table.replace("<table", f"<table {g_args}")
+
+def add_trow_attrinutes(table: str, accesskey:str ="", class_: str ="", contenteditable: str ="", 
+                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
+                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
+                style: str="", tabindex: str="", title: str="", translate: str=""):
+
+    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
+                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
+                    tabindex, title, translate)
+
+    return table.replace("<tr", f"<tr {g_args}")
 
 
+def add_tcell_attributes(table: str, colspan: str="", header: str="", rowspan: str="",
+                accesskey:str ="", class_: str ="", contenteditable: str ="", 
+                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
+                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
+                style: str="", tabindex: str="", title: str="", translate: str=""):
+    
+    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
+                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
+                    tabindex, title, translate)
 
-    ## Transform the 2d dataset as the rows and columns are currently swapped.
-    data_ = [list(x) for x in zip(*data_)]
+    args = {
+        'colspan': colspan,
+        'header': header,
+        'rowspan': rowspan
+    }
 
-    footers_ = data_[-1]
-    data_ = data_[:-1]
+    final_args = tag_specific_attibutes(args)
 
-    print("Data:", data_)
-    print("Headers:", headers_)
-    print("Footers_:", footers_)
-    return data_, headers_, footers_
+    return table.replace("<td", f"<td {final_args} {global_args}")
 
-## TODO: Implement this portion, the rest is functioning code.
-def create_html_table(data: list, headers: list, footers: list):
+def add_theader_attributes(table: str, accesskey:str ="", class_: str ="", contenteditable: str ="", 
+                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
+                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
+                style: str="", tabindex: str="", title: str="", translate: str=""):
 
-    table_headers = thead(
-        "".join([th(i) for i in headers])
-    )
+    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
+                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
+                    tabindex, title, translate)
 
-    table_data = ""
+    return table.replace("<thead", f"<thead {g_args}")
 
-    for row in data:
-        table_data += tr(
-                "".join([td(i) for i in row])
-            )
-        
+def add_th_attributes(table, abbr: str="", colspan: str="", headers: str="", rowspan: str="", scope: str="",                             ## End of tag specific arguements
+                accesskey:str ="", class_: str ="", contenteditable: str ="", 
+                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
+                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
+                style: str="", tabindex: str="", title: str="", translate: str=""):
 
-    table_data = tbody(table_data)
+    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
+                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
+                    tabindex, title, translate)
 
-    table_footers = tfoot(
-        tr(
-            "".join([td(i) for i in footers])
-        )
-    )
+    args = {
+        'abbr': abbr,
+        'colspan': colspan,
+        'headers': headers,
+        'rowspan': rowspan,
+        'scope': scope
+    }
 
-    return table("".join([table_headers, table_data, table_footers]))
+    final_args = tag_specific_attibutes(args)
+      
+    return table.replace("<th", f"<th {final_args} {tag_specific_attibutes}")
 
-##TODO: Currently footers and headers are always generated.  Allow it so that footers aren't a required return.
-def create_table(table: Union[list, dict], has_headers: bool=True, has_footers:bool =True, headers:list =[], footers: Union[list, dict] =[]):
-    """
-    If pandas df, must have headers and footers in the same dataframe.
-    Nested lists can have seperate headers and footers.
-    If passing in a list of dictionaries, the keys will become the headers. The
-    last index will default to footers unless a list of footers is provided.
-    `has_headers`: `True` headers are included in the table.
-    `has_footers`: `True` footers are included in the table.
-    """
-    data_ = []
-    headers_ = []
-    footers_ = []
-    pandas_df = False
+def add_tbody_attributes(table: str, accesskey:str ="", class_: str ="", contenteditable: str ="", 
+                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
+                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
+                style: str="", tabindex: str="", title: str="", translate: str=""):
 
-    ## Checks to ensure that if headers are included in the dataset, additional
-    ## headers are not being provided.
-    if has_headers and len(headers) > 0:
-        raise AttributeError
-    if has_footers and len(footers) > 0:
-        raise AttributeError
+    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
+                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
+                    tabindex, title, translate)
 
-    ## Checks to ensure if headers and footers are provided, they are lists
-    if type(headers) != list:
-        raise AttributeError
-    if type(footers) != list and type(footers) != dict:
-        raise AttributeError
+    return table.replace("<tbody", f"<tbody {g_args}")
 
-    # Check for pandas df.  If it is, create data, headers, and footers.
-    try:
-        import pandas as pd
-        if isinstance(table, pd.DataFrame):
-            pandas_df = True
-            data_, headers_, footers_ = table_from_data_frame()
-    except:
-        pass
+def add_tfooter_attributes(table: str, accesskey:str ="", class_: str ="", contenteditable: str ="", 
+                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
+                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
+                style: str="", tabindex: str="", title: str="", translate: str=""):
 
+    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
+                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
+                    tabindex, title, translate)
 
-    ## Checks if list of lists, or list of dictionaries.
-    if pandas_df == False and type(table) == dict:
-        data_, headers_, footers_ = table_from_dict(table, footers)
-    elif pandas_df == False and type(table[0]) == dict:
-        data_, headers_, footers_ = table_from_dict(table, footers)
-    elif pandas_df == False and type(table[0]) == list:
-        data_, headers_, footers_ = table_from_lists(table, headers, footers)
-
-
-    # result = create_html_table(data_, headers_, footers_)
-
-    return data_, headers_, footers_
+    return table.replace("<tfoot", f"<tfoot {g_args}")

@@ -1,141 +1,161 @@
+import pandas as pd
+from messysoup.messysoup import table, tbody, thead, tfoot, th, tr, td
+from ..attributes import *
+from typing import Union
+from copy import deepcopy
 
-from .attributes import *
+def table_from_data_frame(table: pd.DataFrame):
+    data = table.iloc[:-2].values.lolist()
+    headers = table.columns.values.tolist()
+    footers = table.iloc[-1].values.tolist()
 
-'''
-Table tags from messysoup in another file to avoid circular imports
-when creating tables.
-'''
+    return data, headers, footers
 
-def table(content, accesskey:str ="", class_: str ="", contenteditable: str ="", 
-                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
-                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
-                style: str="", tabindex: str="", title: str="", translate: str=""):
+
+def table_from_lists(table: list, headers: list, footers: list):
+    data_ = []
+    headers_ = []
+    footers_ = []
+
+    ## TODO: Look into checking length of headers and footers against length of data.
+    if len(headers) > 0:
+        headers_ = headers
+
+    if len(footers) > 0:
+        footers_ = footers
+
+    if len(headers) == 0 and len(footers) == 0:
+        data_ = table[1:-1]
+        headers_ = table[0]
+        footers_ = table[-1]
+
+    return data_, headers_, footers_,
+
+
+def table_from_dict(table: list, footers: dict):
+    data_dict = {}
+    data_ = []
+    headers_ = []
+    footers_ = []
+ 
+    ## This will take the dictionary and put it into a nested list
+    ## Rows and columns are swapped for the moment
+
+    if type(table) == dict:
+        data_dict = deepcopy(table)
+
+        if len(footers) > 0:
+            for key, value in footers.items():
+                data_dict[key].append(value)
+
+    else:        
+        for i in table:
+            for key, value in i.items():
+                if key in data_dict.keys():
+                    data_dict[key].append(value)
+                else:
+                    data_dict[key] = [value]
+
+        if len(footers) > 0:
+            for key, value in footers.items():
+                data_dict[key].append(value)
+
+
+    for key, value in data_dict.items():
+        headers_.append(key)
+        temp_list = []
+        for i in value:
+            temp_list.append(i)
+        data_.append(temp_list)
+
+
+
+    ## Transform the 2d dataset as the rows and columns are currently swapped.
+    data_ = [list(x) for x in zip(*data_)]
+
+    footers_ = data_[-1]
+    data_ = data_[:-1]
+
+    print("Data:", data_)
+    print("Headers:", headers_)
+    print("Footers_:", footers_)
+    return data_, headers_, footers_
+
+## TODO: Implement this portion, the rest is functioning code.
+def create_html_table(data: list, headers: list, footers: list):
+
+    table_headers = thead(
+        "".join([th(i) for i in headers])
+    )
+
+    table_data = ""
+
+    for row in data:
+        table_data += tr(
+                "".join([td(i) for i in row])
+            )
+        
+
+    table_data = tbody(table_data)
+
+    table_footers = tfoot(
+        tr(
+            "".join([td(i) for i in footers])
+        )
+    )
+
+    return table("".join([table_headers, table_data, table_footers]))
+
+##TODO: Currently footers and headers are always generated.  Allow it so that footers aren't a required return.
+def create_table(table: Union[list, dict], has_headers: bool=True, has_footers:bool =True, headers:list =[], footers: Union[list, dict] =[], return_html: bool=True):
     """
-    Returns a table.\n
-    `content`: Contents of the table.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
+    If pandas df, must have headers and footers in the same dataframe.
+    Nested lists can have seperate headers and footers.
+    If passing in a list of dictionaries, the keys will become the headers. The
+    last index will default to footers unless a list of footers is provided.
+    `has_headers`: `True` headers are included in the table.
+    `has_footers`: `True` footers are included in the table.
     """
-    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
-                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
-                    tabindex, title, translate)
-      
-    return f"<table {g_args}>{content}</table>\n"
+    data_ = []
+    headers_ = []
+    footers_ = []
+    pandas_df = False
 
-def tbody(content, accesskey:str ="", class_: str ="", contenteditable: str ="", 
-                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
-                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
-                style: str="", tabindex: str="", title: str="", translate: str=""):
-    """
-    Returns a table body.\n
-    `content`: Contents of the table body.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
-    """
-    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
-                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
-                    tabindex, title, translate)
-      
-    return f"<tbody {g_args}>{content}</tbody>\n"
+    ## Checks to ensure that if headers are included in the dataset, additional
+    ## headers are not being provided.
+    if has_headers and len(headers) > 0:
+        raise AttributeError
+    if has_footers and len(footers) > 0:
+        raise AttributeError
 
-def td(content, colspan: str="", header: str="", rowspan: str="",
-                accesskey:str ="", class_: str ="", contenteditable: str ="", 
-                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
-                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
-                style: str="", tabindex: str="", title: str="", translate: str=""):
-    """
-    Returns a data cell in a table.\n
-    `content`: Content of the cell.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
-    """
-    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
-                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
-                    tabindex, title, translate)
+    ## Checks to ensure if headers and footers are provided, they are lists
+    if type(headers) != list:
+        raise AttributeError
+    if type(footers) != list and type(footers) != dict:
+        raise AttributeError
 
-    args = {
-        'colspan': colspan,
-        'header': header,
-        'rowspan': rowspan
-    }
-
-    final_args = tag_specific_attibutes(args)
-      
-    return f"<td {final_args} {g_args}>{content}</td>\n"
+    # Check for pandas df.  If it is, create data, headers, and footers.
+    try:
+        import pandas as pd
+        if isinstance(table, pd.DataFrame):
+            pandas_df = True
+            data_, headers_, footers_ = table_from_data_frame()
+    except:
+        pass
 
 
+    ## Checks if list of lists, or list of dictionaries.
+    if pandas_df == False and type(table) == dict:
+        data_, headers_, footers_ = table_from_dict(table, footers)
+    elif pandas_df == False and type(table[0]) == dict:
+        data_, headers_, footers_ = table_from_dict(table, footers)
+    elif pandas_df == False and type(table[0]) == list:
+        data_, headers_, footers_ = table_from_lists(table, headers, footers)
 
-def tfoot(content, accesskey:str ="", class_: str ="", contenteditable: str ="", 
-                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
-                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
-                style: str="", tabindex: str="", title: str="", translate: str=""):
-    """
-    Returns a table footer.\n
-    `content`: Contents of the table footer.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
-    """
-    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
-                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
-                    tabindex, title, translate)
-      
-    return f"<tfoot {g_args}>{content}</tfoot>\n"
 
-def th(content, abbr: str="", colspan: str="", headers: str="", rowspan: str="", scope: str="",                             ## End of tag specific arguements
-                accesskey:str ="", class_: str ="", contenteditable: str ="", 
-                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
-                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
-                style: str="", tabindex: str="", title: str="", translate: str=""):
-    """
-    Returns a table header cell.\n
-    `content`: Contents of the table header cell.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
-    """
-    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
-                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
-                    tabindex, title, translate)
+    # result = create_html_table(data_, headers_, footers_)
 
-    args = {
-        'abbr': abbr,
-        'colspan': colspan,
-        'headers': headers,
-        'rowspan': rowspan,
-        'scope': scope
-    }
-
-    final_args = tag_specific_attibutes(args)
-      
-    return f"<th {final_args} {g_args}>{content}</th>\n"
-
-def thead(content, accesskey:str ="", class_: str ="", contenteditable: str ="", 
-                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
-                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
-                style: str="", tabindex: str="", title: str="", translate: str=""):
-    """
-    Returns a table header.\n
-    `content`: Contents of the table head.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
-    """
-    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
-                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
-                    tabindex, title, translate)
-      
-    return f"<thead {g_args}>{content}</thead>\n"
-
-def tr(content, accesskey:str ="", class_: str ="", contenteditable: str ="", 
-                data_key: str="", data_value: str="", dir_: str="", draggable: str="", 
-                hidden: str="", id_: str="", lang: str="", spellcheck: str="", 
-                style: str="", tabindex: str="", title: str="", translate: str=""):
-    """
-    Returns a table row.\n
-    `content`: Contents of the table row.\n
-    `global_args`: Global attributes shared between HTML elements.
-    see class docstring for complete list.\n
-    """
-    g_args = global_args(accesskey, class_, contenteditable, data_key, data_value, 
-                    dir_, draggable, hidden, id_, lang, spellcheck, style, 
-                    tabindex, title, translate)
-      
-    return f"<tr {g_args}>{content}</tr>\n"
+    if return_html:
+        return create_html_table(data_, headers_, footers_)
+    else:
+        return data_, headers_, footers_
