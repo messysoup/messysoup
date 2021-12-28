@@ -68,17 +68,12 @@ def table_from_dict(table: list, footers: dict):
             temp_list.append(i)
         data_.append(temp_list)
 
-
-
     ## Transform the 2d dataset as the rows and columns are currently swapped.
     data_ = [list(x) for x in zip(*data_)]
 
     footers_ = data_[-1]
     data_ = data_[:-1]
 
-    print("Data:", data_)
-    print("Headers:", headers_)
-    print("Footers_:", footers_)
     return data_, headers_, footers_
 
 ## TODO: Implement this portion, the rest is functioning code.
@@ -124,15 +119,15 @@ def create_table(table: Union[list, dict], has_headers: bool=True, has_footers:b
     ## Checks to ensure that if headers are included in the dataset, additional
     ## headers are not being provided.
     if has_headers and len(headers) > 0:
-        raise AttributeError
+        raise AttributeError("Headers specified, but no headers passed in.  Please pass headers or set 'has_headers' to 'True'")
     if has_footers and len(footers) > 0:
-        raise AttributeError
+        raise AttributeError("Footers specified, but no footers passed in.  Please pass footers or set 'has_footers' to 'True'")
 
     ## Checks to ensure if headers and footers are provided, they are lists
     if type(headers) != list:
-        raise AttributeError
+        raise AttributeError("Headers need to be either a list or dict.")
     if type(footers) != list and type(footers) != dict:
-        raise AttributeError
+        raise AttributeError("Headers need to be either a list or dict.")
 
     # Check for pandas df.  If it is, create data, headers, and footers.
     try:
