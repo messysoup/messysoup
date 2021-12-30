@@ -1,0 +1,303 @@
+{
+    "packages":{
+        "CLAPACK": {
+            "import_name": "clapack",
+            "used": false
+        },
+        "Jinja2": {
+            "import_name": "jinga2",
+            "used": false
+        },
+        "MarkupSafe": {
+            "import_name": "markupsafe",
+            "used": false
+        },
+        "Pygments": {
+            "import_name": "pygments",
+            "used": false
+        },
+        "asciitree":{
+            "import_name": "asciitree",
+            "used": false
+        },
+        "astropy": {
+            "import_name": "astropy",
+            "used": false
+        },
+        "atomicwrites": {
+            "import_name": "atomicwrites",
+            "used": false
+        },
+        "attrs": {
+            "import_name": "attrs",
+            "used": false
+        },
+        "autograd": {
+            "import_name": "autograd",
+            "used": false
+        },
+        "beautifulsoup4": {
+            "import_name": "bs4",
+            "used": false
+        },
+        "biopython": {
+            "import_name": "bio",
+            "used": false
+        },
+        "bleach": {
+            "import_name": "bleach",
+            "used": false
+        },
+        "bokeh": {
+            "import_name": "bokeh",
+            "used": false
+        },
+        "cffi": {
+            "import_name": "cffi",
+            "used": false
+        },
+        "cloudpickle": {
+            "import_name": "cloudpickle",
+            "used": false
+        },
+        "cssselect": {
+            "import_name": "cssselect",
+            "used": false
+        },
+        "cycler": {
+            "import_name": "six",
+            "used": false
+        },
+        "cytoolz": {
+            "import_name": "cytoolz",
+            "used": false
+        },
+        "decorator": {
+            "import_name": "decorator",
+            "used": false
+        },
+        "distlib": {
+            "import_name": "distlib",
+            "used": false
+        },
+        "docutils": {
+            "import_name": "docutils",
+            "used": false
+        },
+        "freesasa": {
+            "import_name": "freesasa",
+            "used": false
+        },
+        "future": {
+            "import_name": "future",
+            "used": false
+        },
+        "html5lib": {
+            "import_name": "html5lib",
+            "used": false
+        },
+        "imageio": {
+            "import_name": "imageio",
+            "used": false
+        },
+        "iniconfig": {
+            "import_name": "iniconfig",
+            "used": false
+        },
+        "jedi": {
+            "import_name": "jedi",
+            "used": false
+        },
+        "joblib": {
+            "import_name": "joblib",
+            "used": false
+        },
+        "kiwisolver": {
+            "import_name": "kiwisolver",
+            "used": false
+        },
+        "logbook": {
+            "import_name": "logbook",
+            "used": false
+        },
+        "lxml": {
+            "import_name": "lxml",
+            "used": false
+        },
+        "matplotlib": {
+            "import_name": "matplotlib",
+            "used": false
+        },
+        "micropip": {
+            "import_name": "micropip",
+            "used": false
+        },
+        "mne": {
+            "import_name": "mne",
+            "used": false
+        },
+        "more-itertools": {
+            "import_name": "more_itertools",
+            "used": false
+        },
+        "mpmath": {
+            "import_name": "mpmath",
+            "used": false
+        },
+        "msgpack": {
+            "import_name": "msgpack",
+            "used": false
+        },
+        "networkx": {
+            "import_name": "networkx",
+            "used": false
+        },
+        "nlopt": {
+            "import_name": "nlopt",
+            "used": false
+        },
+        "nltk": {
+            "import_name": "nltk",
+            "used": false
+        },
+        "nose": {
+            "import_name": "nose",
+            "used": false
+        },
+        "numcodecs": {
+            "import_name": "numcodecs",
+            "used": false
+        },
+        "numpy": {
+            "import_name": "numpy",
+            "used": false
+        },
+        "optlang": {
+            "import_name": "optlang",
+            "used": false
+        },
+        "packaging": {
+            "import_name": "packaging",
+            "used": false
+        },
+        "pandas": {
+            "import_name": "pandas",
+            "used": false
+        },
+        "parso": {
+            "import_name": "parso",
+            "used": false
+        },
+        "patsy": {
+            "import_name": "patsy",
+            "used": false
+        },
+        "pillow": {
+            "import_name": "PIL",
+            "used": false
+        },
+        "pluggy": {
+            "import_name": "pluggy",
+            "used": false
+        },
+        "py": {
+            "import_name": "py",
+            "used": false
+        },
+        "pyb2d": {
+            "import_name": "b2b",
+            "used": false
+        },
+        "pycparser": {
+            "import_name": "pycparser",
+            "used": false
+        },
+        "pytest": {
+            "import_name": "pytest",
+            "used": false
+        },
+        "python-dateutil": {
+            "import_name": "dateutil",
+            "used": false
+        },
+        "python-sat": {
+            "import_name": "pysat",
+            "used": false 
+        },
+        "pytz": {
+            "import_name": "pytz",
+            "used": false
+        },
+        "pywavelets": {
+            "import_name": "pywt",
+            "used": false
+        },
+        "pyyaml": {
+            "import_name": "yaml",
+            "used": false
+        },
+        "regex": {
+            "import_name": "regex",
+            "used": false
+        },
+        "retrying": {
+            "import_name": "retrying",
+            "used": false
+        },
+        "scikit-image": {
+            "import_name": "skimage"
+        },
+        "scikit-learn": {
+            "import_name": "sklearn",
+            "used": false
+        },
+        "setuptools": {
+            "import_name": "setuptools",
+            "used": false
+        },
+        "soupsieve": {
+            "import_name": "soupsieve",
+            "used": false
+        },
+        "statsmodels": {
+            "import_name": "statsmodel",
+            "used": false
+        },
+        "swiglpk": {
+            "import_name": "swiglpk",
+            "used": false
+        },
+        "sympy": {
+            "import_name": "sympy",
+            "used": false
+        },
+        "toolz": {
+            "import_name": "toolz",
+            "used": false
+        },
+        "traits": {
+            "import_name": "traits",
+            "used": false
+        },
+        "typing-extensions": {
+            "import_name": "typing_extensions",
+            "used": false
+        },
+        "uncertainties": {
+            "import_name": "uncertainties",
+            "used": false
+        },
+        "webencodings": {
+            "import_name": "webencodings",
+            "used": false
+        },
+        "xlrd": {
+            "import_name": "xlrd",
+            "used": false
+        },
+        "zarr": {
+            "import_name": "zarr",
+            "used": false
+        }
+    }
+}
