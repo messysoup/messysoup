@@ -1,5 +1,13 @@
 {
     "packages":{
+        "js": {
+            "import_name": "js",
+            "used": false
+        },
+        "pyodide": {
+            "import_name": "pyodide",
+            "used": false
+        },
         "CLAPACK": {
             "import_name": "clapack",
             "used": false

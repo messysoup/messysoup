@@ -3,6 +3,7 @@ old/
 .vscode
 User Tests/
 main.py
+index.js
 .pypirc
 
 # Byte-compiled / optimized / DLL files

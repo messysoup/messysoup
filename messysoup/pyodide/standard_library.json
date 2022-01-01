@@ -1,234 +1,679 @@
 {
-    "standard_lib": [
-        "abc",
-        "aifc",
-        "argparse",
-        "array",
-        "ast",
-        "asynchat",
-        "asyncio",
-        "asyncore",
-        "atexit",
-        "audioop",
-        "base64",
-        "bdb",
-        "binascii",
-        "binhex",
-        "bisect",
-        "builtins",
-        "bz2",
-        "calendar",
-        "cgi",
-        "cgitb",
-        "chunk",
-        "cmath",
-        "cmd",
-        "code",
-        "codecs",
-        "codeop",
-        "collections",
-        "colorsys",
-        "compileall",
-        "concurrent",
-        "configparser",
-        "contextlib",
-        "contextvars",
-        "copy",
-        "copyreg",
-        "cProfile",
-        "crypt",
-        "csv",
-        "ctypes",
-        "curses",
-        "dataclasses",
-        "datetime",
-        "dbm",
-        "decimal",
-        "difflib",
-        "dis",
-        "distutils",
-        "doctest",
-        "email",
-        "encodings",
-        "ensurepip",
-        "enum",
-        "errno",
-        "faulthandler",
-        "fcntl",
-        "filecmp",
-        "fileinput",
-        "fnmatch",
-        "fractions",
-        "ftplib",
-        "functools",
-        "gc",
-        "getopt",
-        "getpass",
-        "gettext",
-        "glob",
-        "graphlib",
-        "grp",
-        "gzip",
-        "hashlib",
-        "heapq",
-        "hmac",
-        "html",
-        "http",
-        "imaplib",
-        "imghdr",
-        "imp",
-        "importlib",
-        "inspect",
-        "io",
-        "ipaddress",
-        "itertools",
-        "json",
-        "keyword",
-        "lib2to3",
-        "linecache",
-        "locale",
-        "logging",
-        "lzma",
-        "mailbox",
-        "mailcap",
-        "marshal",
-        "math",
-        "mimetypes",
-        "mmap",
-        "modulefinder",
-        "msilib",
-        "msvcrt",
-        "multiprocessing",
-        "netrc",
-        "nis",
-        "nntplib",
-        "numbers",
-        "operator",
-        "optparse",
-        "os",
-        "ossaudiodev",
-        "pathlib",
-        "pdb",
-        "pickle",
-        "pickletools",
-        "pipes",
-        "pkgutil",
-        "platform",
-        "plistlib",
-        "poplib",
-        "posix",
-        "pprint",
-        "profile",
-        "profile",
-        "pstats",
-        "pty",
-        "pwd",
-        "py_compile",
-        "pyclbr",
-        "pydoc",
-        "queue",
-        "quopri",
-        "random",
-        "re",
-        "readline",
-        "reprlib",
-        "resource",
-        "rlcompleter",
-        "runpy",
-        "sched",
-        "secrets",
-        "select",
-        "selectors",
-        "shelve",
-        "shlex",
-        "shutil",
-        "signal",
-        "site",
-        "smtpd",
-        "smtplib",
-        "sndhdr",
-        "socket",
-        "socketserver",
-        "spwd",
-        "sqlite3",
-        "ssl",
-        "stat",
-        "statistics",
-        "string",
-        "stringprep",
-        "struct",
-        "subprocess",
-        "sunau",
-        "symtable",
-        "sys",
-        "sysconfig",
-        "syslog",
-        "tabnanny",
-        "tarfile",
-        "telnetlib",
-        "tempfile",
-        "termios",
-        "test",
-        "textwrap",
-        "threading",
-        "time",
-        "timeit",
-        "tkinter",
-        "token",
-        "trace",
-        "traceback",
-        "tracemalloc",
-        "tty",
-        "turtle",
-        "turtledemo",
-        "types",
-        "typing",
-        "unicodedata",
-        "unittest",
-        "urllib",
-        "uu",
-        "uuid",
-        "venv",
-        "warnings",
-        "wave",
-        "weakref",
-        "webbrowser",
-        "winreg",
-        "winsound",
-        "wsgiref",
-        "xdrlib",
-        "xml",
-        "xmlrpc",
-        "zipapp",
-        "zipfile",
-        "zipimport",
-        "zlib",
-        "zoneinfo"
-    ],
+    "standard_lib": {
+        "abc": {
+            "supported": true
+        },
+        "aifc": {
+            "supported": true
+        },
+        "argparse": {
+            "supported": true
+        },
+        "array": {
+            "supported": true
+        },
+        "ast": {
+            "supported": true
+        },
+        "asynchat": {
+            "supported": true
+        },
+        "asyncio": {
+            "supported": true
+        },
+        "asyncore": {
+            "supported": true
+        },
+        "atexit": {
+            "supported": true
+        },
+        "audioop": {
+            "supported": true
+        },
+        "base64": {
+            "supported": true
+        },
+        "bdb": {
+            "supported": true
+        },
+        "binascii": {
+            "supported": true
+        },
+        "binhex": {
+            "supported": true
+        },
+        "bisect": {
+            "supported": true
+        },
+        "builtins": {
+            "supported": true
+        },
+        "bz2": {
+            "supported": true
+        },
+        "calendar": {
+            "supported": true
+        },
+        "cgi": {
+            "supported": true
+        },
+        "cgitb": {
+            "supported": true
+        },
+        "chunk": {
+            "supported": true
+        },
+        "cmath": {
+            "supported": true
+        },
+        "cmd": {
+            "supported": true
+        },
+        "code": {
+            "supported": true
+        },
+        "codecs": {
+            "supported": true
+        },
+        "codeop": {
+            "supported": true
+        },
+        "collections": {
+            "supported": true
+        },
+        "colorsys": {
+            "supported": true
+        },
+        "compileall": {
+            "supported": true
+        },
+        "concurrent": {
+            "supported": true
+        },
+        "configparser": {
+            "supported": true
+        },
+        "contextlib": {
+            "supported": true
+        },
+        "contextvars": {
+            "supported": true
+        },
+        "copy": {
+            "supported": true
+        },
+        "copyreg": {
+            "supported": true
+        },
+        "cProfile": {
+            "supported": true
+        },
+        "crypt": {
+            "supported": true
+        },
+        "csv": {
+            "supported": true
+        },
+        "ctypes": {
+            "supported": true
+        },
+        "curses": {
+            "supported": true
+        },
+        "dataclasses": {
+            "supported": true
+        },
+        "datetime": {
+            "supported": true
+        },
+        "dbm": {
+            "supported": false
+        },
+        "decimal": {
+            "supported": true
+        },
+        "difflib": {
+            "supported": true
+        },
+        "dis": {
+            "supported": true
+        },
+        "distutils": {
+            "supported": true
+        },
+        "doctest": {
+            "supported": true
+        },
+        "email": {
+            "supported": true
+        },
+        "encodings": {
+            "supported": true
+        },
+        "ensurepip": {
+            "supported": false
+        },
+        "enum": {
+            "supported": true
+        },
+        "errno": {
+            "supported": true
+        },
+        "faulthandler": {
+            "supported": true
+        },
+        "fcntl": {
+            "supported": true
+        },
+        "filecmp": {
+            "supported": true
+        },
+        "fileinput": {
+            "supported": true
+        },
+        "fnmatch": {
+            "supported": true
+        },
+        "fractions": {
+            "supported": true
+        },
+        "ftplib": {
+            "supported": true
+        },
+        "functools": {
+            "supported": true
+        },
+        "gc": {
+            "supported": true
+        },
+        "getopt": {
+            "supported": true
+        },
+        "getpass": {
+            "supported": true
+        },
+        "gettext": {
+            "supported": true
+        },
+        "glob": {
+            "supported": true
+        },
+        "graphlib": {
+            "supported": true
+        },
+        "grp": {
+            "supported": true
+        },
+        "gzip": {
+            "supported": true
+        },
+        "hashlib": {
+            "supported": true
+        },
+        "heapq": {
+            "supported": true
+        },
+        "hmac": {
+            "supported": true
+        },
+        "html": {
+            "supported": true
+        },
+        "http": {
+            "supported": true
+        },
+        "imaplib": {
+            "supported": true
+        },
+        "imghdr": {
+            "supported": true
+        },
+        "imp": {
+            "supported": true
+        },
+        "importlib": {
+            "supported": true
+        },
+        "inspect": {
+            "supported": true
+        },
+        "io": {
+            "supported": true
+        },
+        "ipaddress": {
+            "supported": true
+        },
+        "itertools": {
+            "supported": true
+        },
+        "json": {
+            "supported": true
+        },
+        "keyword": {
+            "supported": true
+        },
+        "lib2to3": {
+            "supported": false
+        },
+        "linecache": {
+            "supported": true
+        },
+        "locale": {
+            "supported": true
+        },
+        "logging": {
+            "supported": true
+        },
+        "lzma": {
+            "supported": true
+        },
+        "mailbox": {
+            "supported": true
+        },
+        "mailcap": {
+            "supported": true
+        },
+        "marshal": {
+            "supported": true
+        },
+        "math": {
+            "supported": true
+        },
+        "mimetypes": {
+            "supported": true
+        },
+        "mmap": {
+            "supported": true
+        },
+        "modulefinder": {
+            "supported": true
+        },
+        "msilib": {
+            "supported": true
+        },
+        "msvcrt": {
+            "supported": true
+        },
+        "multiprocessing": {
+            "supported": false
+        },
+        "netrc": {
+            "supported": true
+        },
+        "nis": {
+            "supported": true
+        },
+        "nntplib": {
+            "supported": true
+        },
+        "numbers": {
+            "supported": true
+        },
+        "operator": {
+            "supported": true
+        },
+        "optparse": {
+            "supported": true
+        },
+        "os": {
+            "supported": true
+        },
+        "ossaudiodev": {
+            "supported": true
+        },
+        "pathlib": {
+            "supported": true
+        },
+        "pdb": {
+            "supported": true
+        },
+        "pickle": {
+            "supported": true
+        },
+        "pickletools": {
+            "supported": true
+        },
+        "pipes": {
+            "supported": true
+        },
+        "pkgutil": {
+            "supported": true
+        },
+        "platform": {
+            "supported": true
+        },
+        "plistlib": {
+            "supported": true
+        },
+        "poplib": {
+            "supported": true
+        },
+        "posix": {
+            "supported": true
+        },
+        "pprint": {
+            "supported": true
+        },
+        "profile": {
+            "supported": true
+        },
+        "pstats": {
+            "supported": true
+        },
+        "pty": {
+            "supported": true
+        },
+        "pwd": {
+            "supported": true
+        },
+        "py_compile": {
+            "supported": true
+        },
+        "pyclbr": {
+            "supported": true
+        },
+        "pydoc": {
+            "supported": true
+        },
+        "queue": {
+            "supported": true
+        },
+        "quopri": {
+            "supported": true
+        },
+        "random": {
+            "supported": true
+        },
+        "re": {
+            "supported": true
+        },
+        "readline": {
+            "supported": true
+        },
+        "reprlib": {
+            "supported": true
+        },
+        "resource": {
+            "supported": true
+        },
+        "rlcompleter": {
+            "supported": true
+        },
+        "runpy": {
+            "supported": true
+        },
+        "sched": {
+            "supported": true
+        },
+        "secrets": {
+            "supported": true
+        },
+        "select": {
+            "supported": true
+        },
+        "selectors": {
+            "supported": true
+        },
+        "shelve": {
+            "supported": true
+        },
+        "shlex": {
+            "supported": true
+        },
+        "shutil": {
+            "supported": true
+        },
+        "signal": {
+            "supported": true
+        },
+        "site": {
+            "supported": true
+        },
+        "smtpd": {
+            "supported": true
+        },
+        "smtplib": {
+            "supported": true
+        },
+        "sndhdr": {
+            "supported": true
+        },
+        "socket": {
+            "supported": false
+        },
+        "socketserver": {
+            "supported": true
+        },
+        "spwd": {
+            "supported": true
+        },
+        "sqlite3": {
+            "supported": true
+        },
+        "ssl": {
+            "supported": true
+        },
+        "stat": {
+            "supported": true
+        },
+        "statistics": {
+            "supported": true
+        },
+        "string": {
+            "supported": true
+        },
+        "stringprep": {
+            "supported": true
+        },
+        "struct": {
+            "supported": true
+        },
+        "subprocess": {
+            "supported": true
+        },
+        "sunau": {
+            "supported": true
+        },
+        "symtable": {
+            "supported": true
+        },
+        "sys": {
+            "supported": true
+        },
+        "sysconfig": {
+            "supported": true
+        },
+        "syslog": {
+            "supported": true
+        },
+        "tabnanny": {
+            "supported": true
+        },
+        "tarfile": {
+            "supported": true
+        },
+        "telnetlib": {
+            "supported": true
+        },
+        "tempfile": {
+            "supported": true
+        },
+        "termios": {
+            "supported": true
+        },
+        "test": {
+            "supported": true
+        },
+        "textwrap": {
+            "supported": true
+        },
+        "threading": {
+            "supported": false
+        },
+        "time": {
+            "supported": true
+        },
+        "timeit": {
+            "supported": true
+        },
+        "tkinter": {
+            "supported": false
+        },
+        "token": {
+            "supported": true
+        },
+        "trace": {
+            "supported": true
+        },
+        "traceback": {
+            "supported": true
+        },
+        "tracemalloc": {
+            "supported": true
+        },
+        "tty": {
+            "supported": true
+        },
+        "turtle": {
+            "supported": false
+        },
+        "turtledemo": {
+            "supported": false
+        },
+        "types": {
+            "supported": true
+        },
+        "typing": {
+            "supported": true
+        },
+        "unicodedata": {
+            "supported": true
+        },
+        "unittest": {
+            "supported": true
+        },
+        "urllib": {
+            "supported": true
+        },
+        "uu": {
+            "supported": true
+        },
+        "uuid": {
+            "supported": true
+        },
+        "venv": {
+            "supported": false
+        },
+        "warnings": {
+            "supported": true
+        },
+        "wave": {
+            "supported": true
+        },
+        "weakref": {
+            "supported": true
+        },
+        "webbrowser": {
+            "supported": true
+        },
+        "winreg": {
+            "supported": true
+        },
+        "winsound": {
+            "supported": true
+        },
+        "wsgiref": {
+            "supported": true
+        },
+        "xdrlib": {
+            "supported": true
+        },
+        "xml": {
+            "supported": true
+        },
+        "xmlrpc": {
+            "supported": true
+        },
+        "zipapp": {
+            "supported": true
+        },
+        "zipfile": {
+            "supported": true
+        },
+        "zipimport": {
+            "supported": true
+        },
+        "zlib": {
+            "supported": true
+        },
+        "zoneinfo": {
+            "supported": true
+        }
+    },
     "platform_specific": {
-        "unix": [
-            "crypt",
-            "curses",
-            "fcntl",
-            "grp",
-            "nis",
-            "ossaudiodev",
-            "pipes",
-            "posix",
-            "pty",
-            "pwd",
-            "readline",
-            "resource",
-            "spwd",
-            "syslog",
-            "termios",
-            "tty"
-        ],
-        "windows": [
-            "msilib",
-            "msvcrt",
-            "winreg",
-            "winsound"
-        ]
+        "unix": {
+            "crypt": {
+                "supported": true
+            },
+            "curses": {
+                "supported": false
+            },
+            "fcntl": {
+                "supported": true
+            },
+            "grp": {
+                "supported": true
+            },
+            "nis": {
+                "supported": true
+            },
+            "ossaudiodev": {
+                "supported": true
+            },
+            "pipes": {
+                "supported": true
+            },
+            "posix": {
+                "supported": true
+            },
+            "pty": {
+                "supported": true
+            },
+            "pwd": {
+                "supported": true
+            },
+            "readline": {
+                "supported": true
+            },
+            "resource": {
+                "supported": true
+            },
+            "spwd": {
+                "supported": true
+            },
+            "syslog": {
+                "supported": true
+            },
+            "termios": {
+                "supported": true
+            },
+            "tty": {
+                "supported": true
+            }
+        },
+        "windows": {
+            "msilib": {
+                "supported": true
+            },
+            "msvcrt": {
+                "supported": true
+            },
+            "winreg": {
+                "supported": true
+            },
+            "winsound": {
+                "supported": true
+            }
+        }
     }
 }
