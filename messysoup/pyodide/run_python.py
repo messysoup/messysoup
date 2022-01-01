@@ -41,7 +41,7 @@ def all_supported_packages(standard_lib: list, supported_lib: dict):
 def get_script_contents():
 
     with open(script_location) as f:
-        py_script = [l for l in f.readlines() if l.strip()]
+        py_script = f.readlines()
 
     # Removes required imports and function call.
     # Might need to make this more robust so as to not
