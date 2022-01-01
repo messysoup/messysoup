@@ -117,10 +117,11 @@ async function main(){{
     pyodide.loadPackage(
         {get_imports()[0]}
     )
-    pyodide.runPyodide(
+    pyodide.runPython(`
 {"".join(get_script_contents())}
-    )
+    `)
 }}
+main()
     """
     return setup
 
