@@ -1,0 +1,2 @@
+include messysoup/pyodide/standard_library.json
+include messysoup/pyodide/supported_imports.json
