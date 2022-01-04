@@ -1,15 +1,14 @@
-import pandas as pd
 from messysoup.messysoup import table, tbody, thead, tfoot, th, tr, td
 from ..attributes import *
 from typing import Union
 from copy import deepcopy
 
-def table_from_data_frame(table: pd.DataFrame):
-    data = table.iloc[:-2].values.lolist()
-    headers = table.columns.values.tolist()
-    footers = table.iloc[-1].values.tolist()
+def table_from_data_frame(table):
+    data_ = table.iloc[:-2].values.tolist()
+    headers_ = table.columns.values.tolist()
+    footers_ = table.iloc[-1].values.tolist()
 
-    return data, headers, footers
+    return data_, headers_, footers_
 
 
 def table_from_lists(table: list, headers: list, footers: list):
@@ -134,18 +133,20 @@ def create_table(table: Union[list, dict], has_headers: bool=True, has_footers:b
         import pandas as pd
         if isinstance(table, pd.DataFrame):
             pandas_df = True
-            data_, headers_, footers_ = table_from_data_frame()
-    except:
+            data_, headers_, footers_ = table_from_data_frame(table)
+    except Exception as e:
+        print(e)
         pass
 
 
     ## Checks if list of lists, or list of dictionaries.
-    if pandas_df == False and type(table) == dict:
-        data_, headers_, footers_ = table_from_dict(table, footers)
-    elif pandas_df == False and type(table[0]) == dict:
-        data_, headers_, footers_ = table_from_dict(table, footers)
-    elif pandas_df == False and type(table[0]) == list:
-        data_, headers_, footers_ = table_from_lists(table, headers, footers)
+    if pandas_df == False:
+        if type(table) == dict:
+            data_, headers_, footers_ = table_from_dict(table, footers)
+        elif type(table[0]) == dict:
+            data_, headers_, footers_ = table_from_dict(table, footers)
+        elif type(table[0]) == list:
+            data_, headers_, footers_ = table_from_lists(table, headers, footers)
 
 
     # result = create_html_table(data_, headers_, footers_)
