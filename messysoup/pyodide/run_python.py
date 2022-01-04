@@ -3,6 +3,7 @@ import json
 import os
 import platform
 from pathlib import Path
+import warnings
 
 
 script_location = ""
@@ -50,8 +51,6 @@ def get_script_contents():
         if "run_python" in i or "messysoup.pyodide" in i:
             py_script.remove(i)
 
-    print(py_script)
-
     return py_script
 
 
@@ -61,7 +60,8 @@ def get_imports():
     Returns a nested list of packages imported that are supported,
     and those that are not supported.
     '''
-
+    # Keeping all imported packages and supported packages separate for now.
+    # Should allow for additional expandability in the future.
     imported_packages = []
     non_supported_packages = []
 
@@ -101,9 +101,11 @@ def get_imports():
                 non_supported_packages.append(attempted_import)
         else:
             pass
-    
+
+
     if len(non_supported_packages) > 0:
-        raise ImportWarning(f'{", ".join(non_supported_packages)} are not supported.  If you are sure they are installed and supported, make sure to add them to `supported_imports.json`.')
+        warnings.warn(f'ImportWarning: {", ".join(non_supported_packages)} are not supported.  If you are sure they are installed and supported, make sure to add them to `supported_imports.json`.')
+
 
     return [imported_packages, non_supported_packages]
 
@@ -114,10 +116,10 @@ async function main(){{
     let pyodide = await loadPyodide({{
         indexURL : "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/"
     }});
-    pyodide.loadPackage(
+    await pyodide.loadPackage(
         {get_imports()[0]}
     )
-    pyodide.runPython(`
+    await pyodide.runPythonAsync(`
 {"".join(get_script_contents())}
     `)
 }}
