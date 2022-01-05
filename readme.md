@@ -104,3 +104,12 @@ The majority of attributes allow global arguments.  The below is a quick referen
 - `tabindex`: Tabbing order of the element.
 - `title`: Extra info about the element.
 - `translate`: Whether or not the element should be translated.
+
+## Using Pyodide
+Experimental support has been added for pyodide.  by using `from messysoup.pyodide.run_python import run_python`.  Calling `run_python()` will:
+ - Parse the python file the module was called from.
+ - Warn of any non-standard or un-supported python imports (those not supported by the pyodide project)
+ - Remove the self called import (including MessySoup for now)
+ - Create a new `.js` file with pyodide boilerplate.  This calls the latest CDN by default (currently 18.1) and is not currently compatible with serving the distribution.
+
+ To use pyodide's `js` module you will need to manually enter that into the new `.js` file as the python interpreter will otherwise error out.
